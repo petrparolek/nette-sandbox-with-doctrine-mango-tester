@@ -3,11 +3,4 @@ parameters:
     dbPort: 33306
     dbUser: root
     dbPassword:
-    dbName: nette-sandbox
-
-database:
-	dsn: 'mysql:host=%dbHost%:%dbPort%;dbname=%dbName%'
-	user: %dbUser%
-	password: %dbPassword%
-	options:
-		lazy: yes
+    dbName: 'nette-sandbox'

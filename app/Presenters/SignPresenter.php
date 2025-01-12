@@ -3,25 +3,26 @@
 namespace App\Presenters;
 
 use App\Forms;
+use Nette\Application\Attributes\Persistent;
 use Nette\Application\UI\Form;
 
 final class SignPresenter extends BasePresenter
 {
 
-	/** @var string @persistent */
-	public $backlink = '';
+	#[Persistent]
+	public string $backlink = '';
 
-	/** @var Forms\SignInFormFactory */
-	private $signInFactory;
-
-	/** @var Forms\SignUpFormFactory */
-	private $signUpFactory;
-
-	public function __construct(Forms\SignInFormFactory $signInFactory, Forms\SignUpFormFactory $signUpFactory)
+	public function __construct(
+		private Forms\SignInFormFactory $signInFactory,
+		private Forms\SignUpFormFactory $signUpFactory
+	)
 	{
 		parent::__construct();
-		$this->signInFactory = $signInFactory;
-		$this->signUpFactory = $signUpFactory;
+	}
+
+	public function actionOut(): void
+	{
+		$this->getUser()->logout();
 	}
 
 	/**
@@ -43,11 +44,6 @@ final class SignPresenter extends BasePresenter
 		return $this->signUpFactory->create(function (): void {
 			$this->redirect('Homepage:');
 		});
-	}
-
-	public function actionOut(): void
-	{
-		$this->getUser()->logout();
 	}
 
 }

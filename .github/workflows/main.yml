@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ['7.3', '7.4', '8.0', '8.1']
+        php-versions: ['8.2', '8.3', '8.4']
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -48,8 +48,8 @@ jobs:
       - name: Run Migrations
         run: php bin/console migrations:continue
       - name: Run CS
-        run: vendor/bin/codesniffer app tests
+        run: make cs
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyse app -c phpstan.neon
+        run: make phpstan
       - name: Run Tests
-        run: vendor/bin/tester -C tests
+        run: make tests

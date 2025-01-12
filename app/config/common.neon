@@ -2,6 +2,10 @@
 # WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
 # https://nette.org/security-warning
 #
+
+includes:
+	- %appDir%/config/extensions/doctrine.neon
+
 extensions:
 	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
 	migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
@@ -17,21 +21,16 @@ session:
 	expiration: 14 days
 
 
-database:
-	dsn: 'mysql:host=127.0.0.1;dbname=test'
-	user:
-	password:
-	options:
-		lazy: yes
-
 console:
     url: https://test.local
+
 
 migrations:
 	dir: %appDir%/../migrations # migrations base directory
 	driver: mysql               # pgsql or mysql
-	dbal: nette                 # nextras, nette, doctrine or dibi
+	dbal: doctrine              # nextras, nette, doctrine or dibi
 	withDummyData: yes
+
 
 services:
 	- App\Model\UserManager

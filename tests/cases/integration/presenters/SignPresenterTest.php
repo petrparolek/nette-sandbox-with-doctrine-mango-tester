@@ -2,14 +2,14 @@
 
 namespace AppTests\Presenters;
 
+use App\Model\Entities\User;
+use App\Model\EntityManagerDecorator;
 use App\Model\UserManager;
 use Mockery\MockInterface;
-use Nette;
 use Webnazakazku\MangoTester\Infrastructure\TestCase;
 use Webnazakazku\MangoTester\PresenterTester\PresenterTester;
 
 $testContainerFactory = require __DIR__ . '/../../../bootstrap.php';
-
 
 /**
  * @testCase
@@ -17,8 +17,7 @@ $testContainerFactory = require __DIR__ . '/../../../bootstrap.php';
 class SignPresenterTest extends TestCase
 {
 
-	/** @var PresenterTester */
-	private $presenterTester;
+	private PresenterTester $presenterTester;
 
 	public function __construct(PresenterTester $presenterTester)
 	{
@@ -33,17 +32,21 @@ class SignPresenterTest extends TestCase
 		$testResponse = $this->presenterTester->execute($testRequest);
 		$testResponse->assertRenders([
 			'Sign In',
-			'<form class=form-horizontal action="%S%" method="post" id="frm-signInForm">',
+			'<form action="%S%" method="post" id="frm-signInForm" class=form-horizontal>',
 		]);
 	}
 
-	public function testSignInFormSentOk(Nette\Database\Context $ntb): void
+	public function testSignInFormSentOk(EntityManagerDecorator $em): void
 	{
-		$ntb->table('users')->insert([
-			'username' => 'dave',
-			'password' => password_hash('correct horse battery staple', PASSWORD_BCRYPT),
-			'email' => 'dave@example.com',
-		]);
+		$user = new User();
+
+		$user->setUsername('dave');
+		$user->setEmail('dave@example.com');
+		$user->setPassword('correct horse battery staple');
+		$user->setRole(null);
+
+		$em->persist($user);
+		$em->flush();
 
 		$testRequest = $this->presenterTester->createRequest('Sign')
 			->withParameters(['action' => 'in'])
@@ -57,13 +60,16 @@ class SignPresenterTest extends TestCase
 		$testResponse->assertRedirects('Homepage');
 	}
 
-	public function testSignInFormSentWithWrongPassword(Nette\Database\Context $ntb): void
+	public function testSignInFormSentWithWrongPassword(EntityManagerDecorator $em): void
 	{
-		$ntb->table('users')->insert([
-			'username' => 'dave',
-			'password' => password_hash('correct horse battery staple', PASSWORD_BCRYPT),
-			'email' => 'dave@example.com',
-		]);
+		$user = new User();
+
+		$user->setUsername('dave');
+		$user->setEmail('dave@example.com');
+		$user->setPassword('correct horse battery staple');
+
+		$em->persist($user);
+		$em->flush();
 
 		$testRequest = $this->presenterTester->createRequest('Sign')
 			->withParameters(['action' => 'in'])
@@ -99,7 +105,7 @@ class SignPresenterTest extends TestCase
 		$testResponse = $this->presenterTester->execute($testRequest);
 		$testResponse->assertRenders([
 			'Sign Up',
-			'<form class=form-horizontal action="%S%" method="post" id="frm-signUpForm">',
+			'<form action="%S%" method="post" id="frm-signUpForm" class=form-horizontal>',
 		]);
 	}
 
@@ -118,13 +124,16 @@ class SignPresenterTest extends TestCase
 		$testResponse->assertRedirects('Homepage');
 	}
 
-	public function testSignUpFormSentWithDuplicateUsername(Nette\Database\Context $ntb): void
+	public function testSignUpFormSentWithDuplicateUsername(EntityManagerDecorator $em): void
 	{
-		$ntb->table('users')->insert([
-			'username' => 'dave',
-			'password' => password_hash('does not matter', PASSWORD_BCRYPT),
-			'email' => 'also-does-not-matter@example.com',
-		]);
+		$user = new User();
+
+		$user->setUsername('dave');
+		$user->setEmail('also-does-not-matter@example.com');
+		$user->setPassword('does not matter');
+
+		$em->persist($user);
+		$em->flush();
 
 		$testRequest = $this->presenterTester->createRequest('Sign')
 			->withParameters(['action' => 'up'])

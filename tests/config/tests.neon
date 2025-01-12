@@ -1,10 +1,18 @@
 extensions:
-	migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
 	mango.tester: Webnazakazku\MangoTester\Infrastructure\MangoTesterExtension
 	mango.tester.presenterTester: Webnazakazku\MangoTester\PresenterTester\Bridges\Infrastructure\PresenterTesterExtension
-	- Webnazakazku\MangoTester\HttpMocks\Bridges\Infrastructure\HttpExtension
 	mango.tester.databaseCreator: Webnazakazku\MangoTester\DatabaseCreator\Bridges\NetteDI\DatabaseCreatorExtension
 	mango.tester.databaseCreatorInfrastructure: Webnazakazku\MangoTester\DatabaseCreator\Bridges\Infrastructure\DatabaseCreatorInfrastructureExtension
+	mango.tester.httpMock: Webnazakazku\MangoTester\HttpMocks\Bridges\Infrastructure\HttpExtension
+
+includes:
+	- %appDir%/config/extensions/console.neon
+	- %appDir%/config/extensions/doctrine.neon
+	- %appDir%/config/extensions/migrations.neon
+
+migrations:
+	dir: %appDir%/../migrations
+	withDummyData: true
 
 parameters:
 	appContainer:
@@ -13,32 +21,17 @@ parameters:
 			wwwDir: %wwwDir%
 			tempDir: %tempDir%
 		configFiles:
-			- %appDir%/config/config.neon
-			- %appDir%/config/config.local.neon
+			- %appDir%/config/common.neon
 		databaseConnectionServiceName: database.default.connection
-
-
-
-migrations:
-	dir: %appDir%/../migrations # migrations base directory
-	driver: mysql               # pgsql or mysql
-	dbal: nette                 # nextras, nette, doctrine or dibi
-
-
-database:
-	dsn: 'mysql:host=127.0.0.1;dbname=test'
-	user:
-	password:
-	options:
-		lazy: yes
-
 
 mango.tester.databaseCreator:
 	driver: mysql
 	dbal: Webnazakazku\MangoTester\DatabaseCreator\Bridges\NextrasMigrations\MySqlNextrasMigrationsDbalAdapter
 	migrations: Webnazakazku\MangoTester\DatabaseCreator\Bridges\NextrasMigrations\NextrasMigrationsDriver
 	strategy: reset
-
+	databaseName:
+		format: 'app_test_%d'
 
 services:
 	- AppTests\AppConfiguratorFactory
+	cache.storage: Nette\Caching\Storages\DevNullStorage

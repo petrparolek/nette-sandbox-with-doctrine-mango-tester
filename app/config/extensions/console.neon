@@ -1,0 +1,6 @@
+extensions:
+	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+
+console:
+	url: https://test.local

@@ -52,7 +52,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
 
   console:
-    image: webnazakazku/docker-php-build:8.3
+    image: webnazakazku/docker-php-build:8.2
     entrypoint: /tmp/entrypoint.sh
     working_dir: /var/www/html
     volumes:

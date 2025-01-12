@@ -6,3 +6,4 @@ vendor/*
 !web.config
 app/config/local.neon
 tests/config/tests.local.neon
+tests/**/output

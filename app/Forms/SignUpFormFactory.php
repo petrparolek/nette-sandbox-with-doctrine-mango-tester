@@ -14,16 +14,11 @@ final class SignUpFormFactory
 
 	private const PASSWORD_MIN_LENGTH = 7;
 
-	/** @var FormFactory */
-	private $factory;
-
-	/** @var Model\UserManager */
-	private $userManager;
-
-	public function __construct(FormFactory $factory, Model\UserManager $userManager)
+	public function __construct(
+		private FormFactory $factory,
+		private Model\UserManager $userManager
+	)
 	{
-		$this->factory = $factory;
-		$this->userManager = $userManager;
 	}
 
 	public function create(callable $onSuccess): Form
@@ -38,7 +33,7 @@ final class SignUpFormFactory
 		$form->addPassword('password', 'Create a password:')
 			->setOption('description', sprintf('at least %d characters', self::PASSWORD_MIN_LENGTH))
 			->setRequired('Please create a password.')
-			->addRule($form::MIN_LENGTH, null, self::PASSWORD_MIN_LENGTH);
+			->addRule($form::MinLength, null, self::PASSWORD_MIN_LENGTH);
 
 		$form->addSubmit('send', 'Sign up');
 
@@ -47,6 +42,7 @@ final class SignUpFormFactory
 				$this->userManager->add($values->username, $values->email, $values->password);
 			} catch (Model\DuplicateNameException $e) {
 				$form->addError('Username is already taken.');
+
 				return;
 			}
 

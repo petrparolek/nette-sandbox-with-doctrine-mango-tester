@@ -2,13 +2,13 @@
 
 namespace App;
 
-use Nette\Configurator;
+use Nette\Bootstrap\Configurator;
 use Tester\Environment;
 
 class Bootstrap
 {
 
-	public static function boot(): Configurator
+	public static function boot(?string $tempDir = null): Configurator
 	{
 		$configurator = new Configurator();
 
@@ -16,7 +16,8 @@ class Bootstrap
 		$configurator->enableTracy(__DIR__ . '/../log');
 
 		$configurator->setTimeZone('Europe/Prague');
-		$configurator->setTempDirectory(__DIR__ . '/../temp');
+		$tempDir ??= __DIR__ . '/../temp';
+		$configurator->setTempDirectory($tempDir);
 
 		$configurator->createRobotLoader()
 			->addDirectory(__DIR__)
@@ -29,11 +30,11 @@ class Bootstrap
 		return $configurator;
 	}
 
-
 	public static function bootForTests(): Configurator
 	{
 		$configurator = self::boot();
 		Environment::setup();
+
 		return $configurator;
 	}
 

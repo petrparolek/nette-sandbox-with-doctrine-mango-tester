@@ -58,7 +58,7 @@ services:
     volumes:
       - ./:/var/www/html
       - ./.docker/cache:/cache
-      - ./.docker/php/xdebug.ini:/etc/php/8.3/mods-available/xdebug.ini
+      - ./.docker/php/xdebug.ini:/etc/php/8.2/mods-available/xdebug.ini
       - ./.docker/console/root:/root
       - ./.docker/console/.bashrc:/tmp/.bashrc
       - ./.docker/console/entrypoint.sh:/tmp/entrypoint.sh

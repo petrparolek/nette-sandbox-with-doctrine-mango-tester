@@ -12,10 +12,11 @@ use Nette\DI\Extensions\InjectExtension;
 use Tester\Dumper;
 use Tester\Environment;
 use Tracy\Bridges\Nette\TracyExtension;
+use Tracy\Debugger;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-BypassFinals::enable();
+//BypassFinals::enable();
 
 $configurator = new Configurator();
 
@@ -69,5 +70,7 @@ $configurator->addConfig(__DIR__ . '/../app/config/local.neon');
 
 Environment::setup();
 Dumper::$maxPathSegments = 32;
+Debugger::$showLocation = true;
+Debugger::$showBar = true;
 
 return [$configurator, 'createContainer'];

@@ -56,12 +56,14 @@ class AppConfiguratorFactory implements IAppConfiguratorFactory
 					'debug' => [
 						'panel' => false,
 					],
-					'connection' => [
-						'dbname' => $testDatabaseName,
+					'connections' => [
+						'default' => [
+							'dbname' => $testDatabaseName,
+						],
 					],
 				],
 				'services' => [
-					'nettrine.dbal.connection' => [
+					'nettrine.dbal.connections.default.connection' => [
 						'setup' => [
 							new DIStatement('@databaseCreator::createTestDatabase'),
 						],

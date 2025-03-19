@@ -18,9 +18,10 @@ abstract class EntityRepository extends DoctrineEntityRepository
 	public function get(int $id)
 	{
 		$entity = $this->find($id);
+		$entityName = $this->getEntityName();
 
-		if (!$entity instanceof $this->_entityName) {
-			$path = explode('\\', $this->_entityName);
+		if (!$entity instanceof $entityName) {
+			$path = explode('\\', $entityName);
 			$class = array_pop($path);
 
 			throw new NotExistsEntityException($class . ' not found');
@@ -37,9 +38,10 @@ abstract class EntityRepository extends DoctrineEntityRepository
 	public function getOneBy(array $criteria, ?array $orderBy = null)
 	{
 		$entity = $this->findOneBy($criteria, $orderBy);
+		$entityName = $this->getEntityName();
 
-		if (!$entity instanceof $this->_entityName) {
-			$path = explode('\\', $this->_entityName);
+		if (!$entity instanceof $entityName) {
+			$path = explode('\\', $entityName);
 			$class = array_pop($path);
 
 			throw new NotExistsEntityException($class . ' not found');

@@ -14,6 +14,16 @@
 			"homepage": "https://nette.org/contributors"
 		}
 	],
+	"repositories": [
+		{
+			"type": "path",
+			"url": "vendor-test/nettrine/dbal"
+		},
+		{
+			"type": "path",
+			"url": "vendor-test/nextras/migrations"
+		}
+	],
 	"require": {
 		"php": ">=8.2",
 		"nette/application": "~3.2.0",
@@ -32,11 +42,9 @@
 		"tracy/tracy": "~2.10.0",
 		"dg/adminer-custom": "^2.0",
 		"contributte/console": "^0.10.0",
-		"nextras/migrations": "^3.1",
-		"nettrine/dbal": "~0.8.0",
-		"nettrine/orm": "~0.8.0",
-		"phpstan/phpstan-doctrine": "^2.0"
-	},
+		"nextras/migrations": "@dev",
+		"nettrine/dbal": "dev-master as 0.10.0",
+		"nettrine/orm": "0.10.x-dev"},
 	"require-dev": {
 		"nette/tester": "~2.5.0",
 		"phpstan/phpstan": "^2.0",
@@ -44,6 +52,7 @@
 		"phpstan/phpstan-mockery": "^2.0",
 		"phpstan/phpstan-nette": "^2.0",
 		"phpstan/phpstan-strict-rules": "^2.0",
+		"phpstan/phpstan-doctrine": "^2.0",
 		"contributte/qa": "^0.3",
 		"mockery/mockery": "^1.0",
 		"webnazakazku/mango-tester-http-mocks": "^0.5",

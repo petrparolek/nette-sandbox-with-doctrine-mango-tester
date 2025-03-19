@@ -1,34 +1,30 @@
 extensions:
-	nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
-
-	nettrine.cache: Nettrine\Cache\DI\CacheExtension
-
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
-	nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension
 
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
-	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
-	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension
-	nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
 
 nettrine.dbal:
-	connection:
-		driver: mysqli
-		host: %dbHost%
-		user: %dbUser%
-		password: %dbPassword%
-		dbname: %dbName%
-		port: %dbPort%
-		charset: utf8
+	connections:
+		default:
+			driver: mysqli
+			host: %dbHost%
+			user: %dbUser%
+			password: %dbPassword%
+			dbname: %dbName%
+			port: %dbPort%
+			charset: utf8
 	debug:
 		panel: %debugMode%
 		sourcePaths: [%appDir%]
 
 nettrine.orm:
-	configuration:
-		proxyDir: '%tempDir%/cache/proxies'
-	entityManagerDecoratorClass: App\Model\EntityManagerDecorator
+	managers:
+		default:
+			connection: default
+			entityManagerDecoratorClass: App\Model\EntityManagerDecorator
 
-nettrine.orm.attributes:
-	mapping:
-		App\Model\Entities: %appDir%/Model/Entities
+			mapping:
+				defaut:
+					namespace: App\Model\Entities
+					directories:
+						- %appDir%/Model/Entities

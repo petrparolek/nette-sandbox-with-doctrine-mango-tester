@@ -16,7 +16,7 @@ use Tracy\Debugger;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-//BypassFinals::enable();
+BypassFinals::enable();
 
 $configurator = new Configurator();
 

@@ -2,5 +2,5 @@ parameters:
     dbHost: 127.0.0.1
     dbPort: 33306
     dbUser: root
-    dbPassword:
+    dbPassword: ''
     dbName: 'nette-sandbox'

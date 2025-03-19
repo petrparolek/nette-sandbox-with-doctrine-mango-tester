@@ -16,12 +16,8 @@
 	],
 	"repositories": [
 		{
-			"type": "path",
-			"url": "vendor-test/nettrine/dbal"
-		},
-		{
-			"type": "path",
-			"url": "vendor-test/nextras/migrations"
+			"type": "vcs",
+			"url": "https://github.com/petrparolek/nettrine-dbal"
 		}
 	],
 	"require": {
@@ -42,8 +38,8 @@
 		"tracy/tracy": "~2.10.0",
 		"dg/adminer-custom": "^2.0",
 		"contributte/console": "^0.10.0",
-		"nextras/migrations": "@dev",
-		"nettrine/dbal": "dev-master as 0.10.0",
+		"nextras/migrations": "~3.4.0",
+		"nettrine/dbal": "dev-88-improving-tracy-bar as 0.10.0",
 		"nettrine/orm": "0.10.x-dev"},
 	"require-dev": {
 		"nette/tester": "~2.5.0",

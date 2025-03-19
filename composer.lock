@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12a716266cdd0e990c17547c7ad90bfe",
+    "content-hash": "a97603123443ca5028189ca93dc6f2d8",
     "packages": [
         {
             "name": "contributte/console",
@@ -2164,11 +2164,17 @@
         },
         {
             "name": "nettrine/dbal",
-            "version": "dev-master",
+            "version": "dev-88-improving-tracy-bar",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/petrparolek/nettrine-dbal.git",
+                "reference": "576c8ea37f98e527da6c746bd1333dc3a58906e6"
+            },
             "dist": {
-                "type": "path",
-                "url": "vendor-test/nettrine/dbal",
-                "reference": "bd266249615b855a18fd03e8df37969d92fe8f78"
+                "type": "zip",
+                "url": "https://api.github.com/repos/petrparolek/nettrine-dbal/zipball/576c8ea37f98e527da6c746bd1333dc3a58906e6",
+                "reference": "576c8ea37f98e527da6c746bd1333dc3a58906e6",
+                "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^4.2.1",
@@ -2224,9 +2230,20 @@
                 "postgres",
                 "sqlite"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/petrparolek/nettrine-dbal/tree/88-improving-tracy-bar"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/f3l1x"
+                },
+                {
+                    "type": "custom",
+                    "url": "https://contributte.org/partners.html"
+                }
+            ],
+            "time": "2025-02-01T17:13:28+00:00"
         },
         {
             "name": "nettrine/orm",
@@ -2311,11 +2328,17 @@
         },
         {
             "name": "nextras/migrations",
-            "version": "dev-master",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nextras/migrations.git",
+                "reference": "20b522d39282f5cd0a239c3cadbba4cb0ec327d3"
+            },
             "dist": {
-                "type": "path",
-                "url": "vendor-test/nextras/migrations",
-                "reference": "d2e2bf0ba578c48ef87e732d967f79c22f337b4e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/nextras/migrations/zipball/20b522d39282f5cd0a239c3cadbba4cb0ec327d3",
+                "reference": "20b522d39282f5cd0a239c3cadbba4cb0ec327d3",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
@@ -2323,8 +2346,8 @@
             "require-dev": {
                 "dibi/dibi": "~3.0 | ~4.0 | ~5.0",
                 "doctrine/cache": "~1.11 | ~2.0",
-                "doctrine/dbal": "~2.5 | ~3.0",
-                "doctrine/orm": "~2.5",
+                "doctrine/dbal": "^2.5 || ^3.0 || ^4.0",
+                "doctrine/orm": "^2.9 || ^3.0",
                 "ext-openssl": "*",
                 "mockery/mockery": "~1.3",
                 "nette/database": "~2.4 | ~3.0",
@@ -2361,18 +2384,16 @@
                     "src/exceptions.php"
                 ]
             },
-            "autoload-dev": {
-                "classmap": [
-                    "tests/inc"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
             "description": "Database migrations runner",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/nextras/migrations/issues",
+                "source": "https://github.com/nextras/migrations/tree/v3.4.0"
+            },
+            "time": "2025-02-06T22:04:34+00:00"
         },
         {
             "name": "psr/cache",
@@ -4470,7 +4491,7 @@
     "aliases": [
         {
             "package": "nettrine/dbal",
-            "version": "9999999-dev",
+            "version": "dev-88-improving-tracy-bar",
             "alias": "0.10.0",
             "alias_normalized": "0.10.0.0"
         }
@@ -4478,8 +4499,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "nettrine/dbal": 20,
-        "nettrine/orm": 20,
-        "nextras/migrations": 20
+        "nettrine/orm": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

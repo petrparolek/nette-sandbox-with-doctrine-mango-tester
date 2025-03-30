@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a97603123443ca5028189ca93dc6f2d8",
+    "content-hash": "12e23d6bb80d6eefb7dbee46dd300212",
     "packages": [
         {
             "name": "contributte/console",
@@ -78,17 +78,91 @@
             "time": "2024-01-04T20:10:58+00:00"
         },
         {
-            "name": "dg/adminer-custom",
-            "version": "v2.0.2",
+            "name": "contributte/psr6-caching",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dg/adminer.git",
-                "reference": "202546bcedf0ed30f6253cfcc92697cc938a960d"
+                "url": "https://github.com/contributte/psr6-caching.git",
+                "reference": "3273d92eb6799752e92f92d4053fe302f39322b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dg/adminer/zipball/202546bcedf0ed30f6253cfcc92697cc938a960d",
-                "reference": "202546bcedf0ed30f6253cfcc92697cc938a960d",
+                "url": "https://api.github.com/repos/contributte/psr6-caching/zipball/3273d92eb6799752e92f92d4053fe302f39322b5",
+                "reference": "3273d92eb6799752e92f92d4053fe302f39322b5",
+                "shasum": ""
+            },
+            "require": {
+                "nette/caching": "^3.2.0",
+                "php": ">=8.1",
+                "psr/cache": "^1.0.0 || ^2.0.0 || ^3.0.0"
+            },
+            "require-dev": {
+                "contributte/phpstan": "^0.1",
+                "contributte/qa": "^0.4",
+                "contributte/tester": "^0.3",
+                "nette/di": "^3.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Contributte\\Psr6\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Šuška",
+                    "homepage": "https://github.com/vody105"
+                },
+                {
+                    "name": "Milan Felix Šulc",
+                    "homepage": "https://f3l1x.io"
+                }
+            ],
+            "description": "PSR-6 (Caching Interface) adapter for Nette Caching",
+            "homepage": "https://github.com/contributte/psr6-caching",
+            "keywords": [
+                "adapter",
+                "caching",
+                "nette",
+                "psr6"
+            ],
+            "support": {
+                "issues": "https://github.com/contributte/psr6-caching/issues",
+                "source": "https://github.com/contributte/psr6-caching/tree/v0.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://contributte.org/partners.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/f3l1x",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-27T06:41:53+00:00"
+        },
+        {
+            "name": "dg/adminer-custom",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/adminer.git",
+                "reference": "a184476088ec35b33c0f18648c7717525ad8a27d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/adminer/zipball/a184476088ec35b33c0f18648c7717525ad8a27d",
+                "reference": "a184476088ec35b33c0f18648c7717525ad8a27d",
                 "shasum": ""
             },
             "type": "library",
@@ -105,35 +179,35 @@
                 "sqlite"
             ],
             "support": {
-                "source": "https://github.com/dg/adminer/tree/v2.0.2"
+                "source": "https://github.com/dg/adminer/tree/v2.0.3"
             },
-            "time": "2024-12-21T05:53:21+00:00"
+            "time": "2025-02-21T01:10:28+00:00"
         },
         {
             "name": "doctrine/collections",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "d8af7f248c74f195f7347424600fd9e17b57af59"
+                "reference": "2eb07e5953eed811ce1b309a7478a3b236f2273d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/d8af7f248c74f195f7347424600fd9e17b57af59",
-                "reference": "d8af7f248c74f195f7347424600fd9e17b57af59",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/2eb07e5953eed811ce1b309a7478a3b236f2273d",
+                "reference": "2eb07e5953eed811ce1b309a7478a3b236f2273d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/deprecations": "^1",
-                "php": "^8.1"
+                "php": "^8.1",
+                "symfony/polyfill-php84": "^1.30"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^12",
                 "ext-json": "*",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.11"
+                "phpunit/phpunit": "^10.5"
             },
             "type": "library",
             "autoload": {
@@ -177,7 +251,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/collections/issues",
-                "source": "https://github.com/doctrine/collections/tree/2.2.2"
+                "source": "https://github.com/doctrine/collections/tree/2.3.0"
             },
             "funding": [
                 {
@@ -193,7 +267,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-18T06:56:21+00:00"
+            "time": "2025-03-22T10:17:19+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -2164,16 +2238,16 @@
         },
         {
             "name": "nettrine/dbal",
-            "version": "dev-88-improving-tracy-bar",
+            "version": "v0.10.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/petrparolek/nettrine-dbal.git",
-                "reference": "576c8ea37f98e527da6c746bd1333dc3a58906e6"
+                "url": "https://github.com/contributte/doctrine-dbal.git",
+                "reference": "1da049886a5aa0eac300205b1362bda87892e447"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/petrparolek/nettrine-dbal/zipball/576c8ea37f98e527da6c746bd1333dc3a58906e6",
-                "reference": "576c8ea37f98e527da6c746bd1333dc3a58906e6",
+                "url": "https://api.github.com/repos/contributte/doctrine-dbal/zipball/1da049886a5aa0eac300205b1362bda87892e447",
+                "reference": "1da049886a5aa0eac300205b1362bda87892e447",
                 "shasum": ""
             },
             "require": {
@@ -2205,11 +2279,7 @@
                     "Nettrine\\DBAL\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2231,32 +2301,33 @@
                 "sqlite"
             ],
             "support": {
-                "source": "https://github.com/petrparolek/nettrine-dbal/tree/88-improving-tracy-bar"
+                "issues": "https://github.com/contributte/doctrine-dbal/issues",
+                "source": "https://github.com/contributte/doctrine-dbal/tree/v0.10.1"
             },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/f3l1x"
+                    "url": "https://contributte.org/partners.html",
+                    "type": "custom"
                 },
                 {
-                    "type": "custom",
-                    "url": "https://contributte.org/partners.html"
+                    "url": "https://github.com/f3l1x",
+                    "type": "github"
                 }
             ],
-            "time": "2025-02-01T17:13:28+00:00"
+            "time": "2025-03-28T13:45:03+00:00"
         },
         {
             "name": "nettrine/orm",
-            "version": "dev-master",
+            "version": "v0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/contributte/doctrine-orm.git",
-                "reference": "e5302ab44e6127760af8cd8a5b3da57c8ed4f421"
+                "reference": "28fe522321561a0496b20b06f95de7611bfdce24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contributte/doctrine-orm/zipball/e5302ab44e6127760af8cd8a5b3da57c8ed4f421",
-                "reference": "e5302ab44e6127760af8cd8a5b3da57c8ed4f421",
+                "url": "https://api.github.com/repos/contributte/doctrine-orm/zipball/28fe522321561a0496b20b06f95de7611bfdce24",
+                "reference": "28fe522321561a0496b20b06f95de7611bfdce24",
                 "shasum": ""
             },
             "require": {
@@ -2280,7 +2351,6 @@
                 "symfony/console": "^7.1.8 ",
                 "tracy/tracy": "^2.10.3"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2312,7 +2382,7 @@
             ],
             "support": {
                 "issues": "https://github.com/contributte/doctrine-orm/issues",
-                "source": "https://github.com/contributte/doctrine-orm/tree/master"
+                "source": "https://github.com/contributte/doctrine-orm/tree/v0.10.0"
             },
             "funding": [
                 {
@@ -2324,7 +2394,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-18T19:58:08+00:00"
+            "time": "2025-03-24T08:51:20+00:00"
         },
         {
             "name": "nextras/migrations",
@@ -2549,16 +2619,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.2.1",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "fefcc18c0f5d0efe3ab3152f15857298868dc2c3"
+                "reference": "e51498ea18570c062e7df29d05a7003585b19b88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/fefcc18c0f5d0efe3ab3152f15857298868dc2c3",
-                "reference": "fefcc18c0f5d0efe3ab3152f15857298868dc2c3",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e51498ea18570c062e7df29d05a7003585b19b88",
+                "reference": "e51498ea18570c062e7df29d05a7003585b19b88",
                 "shasum": ""
             },
             "require": {
@@ -2622,7 +2692,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.2.1"
+                "source": "https://github.com/symfony/console/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -2638,7 +2708,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-11T03:49:26+00:00"
+            "time": "2025-03-12T08:11:12+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3026,6 +3096,82 @@
             "time": "2024-09-09T11:45:10+00:00"
         },
         {
+            "name": "symfony/polyfill-php84",
+            "version": "v1.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php84.git",
+                "reference": "e5493eb51311ab0b1cc2243416613f06ed8f18bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/e5493eb51311ab0b1cc2243416613f06ed8f18bd",
+                "reference": "e5493eb51311ab0b1cc2243416613f06ed8f18bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php84\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.4+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php84/tree/v1.31.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-09T12:04:04+00:00"
+        },
+        {
             "name": "symfony/service-contracts",
             "version": "v3.5.1",
             "source": {
@@ -3197,16 +3343,16 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v7.2.4",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "4ede73aa7a73d81506002d2caadbbdad1ef5b69a"
+                "reference": "c37b301818bd7288715d40de634f05781b686ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/4ede73aa7a73d81506002d2caadbbdad1ef5b69a",
-                "reference": "4ede73aa7a73d81506002d2caadbbdad1ef5b69a",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/c37b301818bd7288715d40de634f05781b686ace",
+                "reference": "c37b301818bd7288715d40de634f05781b686ace",
                 "shasum": ""
             },
             "require": {
@@ -3253,7 +3399,7 @@
                 "serialize"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-exporter/tree/v7.2.4"
+                "source": "https://github.com/symfony/var-exporter/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -3269,7 +3415,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-13T10:27:23+00:00"
+            "time": "2025-03-13T12:21:46+00:00"
         },
         {
             "name": "tracy/tracy",
@@ -3805,16 +3951,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.8",
+            "version": "2.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "f9adff3b87c03b12cc7e46a30a524648e497758f"
+                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f9adff3b87c03b12cc7e46a30a524648e497758f",
-                "reference": "f9adff3b87c03b12cc7e46a30a524648e497758f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8ca5f79a8f63c49b2359065832a654e1ec70ac30",
+                "reference": "8ca5f79a8f63c49b2359065832a654e1ec70ac30",
                 "shasum": ""
             },
             "require": {
@@ -3859,7 +4005,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-09T09:30:48+00:00"
+            "time": "2025-03-24T13:45:00+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -4139,16 +4285,16 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "8.16.0",
+            "version": "8.16.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "7748a4282df19daf966fda1d8c60a8aec803c83a"
+                "reference": "8bf0408a9cf30687d87957d364de9a3d5d00d948"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/7748a4282df19daf966fda1d8c60a8aec803c83a",
-                "reference": "7748a4282df19daf966fda1d8c60a8aec803c83a",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/8bf0408a9cf30687d87957d364de9a3d5d00d948",
+                "reference": "8bf0408a9cf30687d87957d364de9a3d5d00d948",
                 "shasum": ""
             },
             "require": {
@@ -4160,11 +4306,11 @@
             "require-dev": {
                 "phing/phing": "3.0.1",
                 "php-parallel-lint/php-parallel-lint": "1.4.0",
-                "phpstan/phpstan": "2.1.6",
+                "phpstan/phpstan": "2.1.11",
                 "phpstan/phpstan-deprecation-rules": "2.0.1",
-                "phpstan/phpstan-phpunit": "2.0.4",
-                "phpstan/phpstan-strict-rules": "2.0.3",
-                "phpunit/phpunit": "9.6.8|10.5.45|11.4.4|11.5.9|12.0.4"
+                "phpstan/phpstan-phpunit": "2.0.6",
+                "phpstan/phpstan-strict-rules": "2.0.4",
+                "phpunit/phpunit": "9.6.8|10.5.45|11.4.4|11.5.15|12.0.10"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -4188,7 +4334,7 @@
             ],
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/8.16.0"
+                "source": "https://github.com/slevomat/coding-standard/tree/8.16.2"
             },
             "funding": [
                 {
@@ -4200,7 +4346,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-02-23T18:12:49+00:00"
+            "time": "2025-03-27T19:37:58+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -4488,19 +4634,9 @@
             "time": "2024-11-12T17:44:03+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "nettrine/dbal",
-            "version": "dev-88-improving-tracy-bar",
-            "alias": "0.10.0",
-            "alias_normalized": "0.10.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "nettrine/dbal": 20,
-        "nettrine/orm": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

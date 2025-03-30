@@ -28,3 +28,10 @@ nettrine.orm:
 					namespace: App\Model\Entities
 					directories:
 						- %appDir%/Model/Entities
+
+			defaultCache: Contributte\Psr6\CachePool(
+				Nette\Caching\Cache(
+					Nette\Caching\Storages\FileStorage(%tempDir%/cache)
+					doctrine/dbal
+				)
+			)

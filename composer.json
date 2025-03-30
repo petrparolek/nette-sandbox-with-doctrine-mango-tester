@@ -14,12 +14,6 @@
 			"homepage": "https://nette.org/contributors"
 		}
 	],
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/petrparolek/nettrine-dbal"
-		}
-	],
 	"require": {
 		"php": ">=8.2",
 		"nette/application": "~3.2.0",
@@ -39,8 +33,9 @@
 		"dg/adminer-custom": "^2.0",
 		"contributte/console": "^0.10.0",
 		"nextras/migrations": "~3.4.0",
-		"nettrine/dbal": "dev-88-improving-tracy-bar as 0.10.0",
-		"nettrine/orm": "0.10.x-dev"},
+		"nettrine/dbal": "~0.10.0",
+		"nettrine/orm": "~0.10.0",
+		"contributte/psr6-caching": "^0.3.0"},
 	"require-dev": {
 		"nette/tester": "~2.5.0",
 		"phpstan/phpstan": "^2.0",

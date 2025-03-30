@@ -22,7 +22,6 @@ parameters:
 			tempDir: %tempDir%
 		configFiles:
 			- %appDir%/config/common.neon
-		databaseConnectionServiceName: database.default.connection
 
 mango.tester.databaseCreator:
 	driver: mysql
@@ -31,6 +30,17 @@ mango.tester.databaseCreator:
 	strategy: reset
 	databaseName:
 		format: 'app_test_%d'
+
+nettrine.orm:
+	managers:
+		default:
+			defaultCache: Contributte\Psr6\CachePool(
+				Nette\Caching\Cache(
+					Nette\Caching\Storages\DevNullStorage()
+					doctrine/dbal
+				)
+			)
+
 
 services:
 	- AppTests\AppConfiguratorFactory

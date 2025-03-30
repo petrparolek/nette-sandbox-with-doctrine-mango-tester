@@ -7,6 +7,7 @@ includes:
 	- %appDir%/config/extensions/doctrine.neon
 
 extensions:
+	psr6: Contributte\Psr6\DI\Psr6CachingExtension
 	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
 	migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
 
